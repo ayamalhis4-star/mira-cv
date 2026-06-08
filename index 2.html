@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My CV Application</title>
+
+    <style>
+
+        body{
+            background-color:#f5f5f5;
+            font-family: Arial;
+            text-align:center;
+        }
+
+        .container{
+            width:70%;
+            margin:auto;
+            background:white;
+            padding:20px;
+            margin-top:40px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+
+            animation: move 2s;
+        }
+
+        h1{
+            color:darkblue;
+        }
+
+        button{
+            width:200px;
+            padding:10px;
+            margin:10px;
+            font-size:16px;
+            background-color:darkblue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            transition:0.5s;
+        }
+
+        button:hover{
+            background-color:blue;
+            transform:scale(1.05);
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:18px;
+            color:black;
+            background:#eeeeee;
+            padding:20px;
+            border-radius:10px;
+        }
+
+        @keyframes move{
+            from{
+                opacity:0;
+                margin-top:0px;
+            }
+
+            to{
+                opacity:1;
+                margin-top:40px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>My CV Application</h1>
+
+        <h3>Select a section from 1 to 6</h3>
+
+        <button onclick="showInfo(1)">1 - Personal Information</button>
+
+        <button onclick="showInfo(2)">2 - Educational Certificates</button>
+
+        <button onclick="showInfo(3)">3 - Skills</button>
+
+        <button onclick="showInfo(4)">4 - Experiences</button>
+
+        <button onclick="showInfo(5)">5 - Training Courses</button>
+
+        <button onclick="showInfo(6)">6 - Additional Qualifications</button>
+
+        <br><br>
+
+        <input type="number" id="number" placeholder="Enter number from 1 to 6">
+
+        <button onclick="chooseMenu()">Show</button>
+
+        <button onclick="goHome()">Home Page</button>
+
+        <div id="result">
+
+            Welcome to my CV Website
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function chooseMenu(){
+
+            var num = document.getElementById("number").value;
+
+            showInfo(num);
+        }
+
+        function showInfo(num){
+
+            var text = "";
+
+            if(num == 1){
+
+                text =
+                "<h2>Personal Information</h2>" +
+                "Name: Mira Abo Alrob <br>" +
+                "Age: 20 <br>" +
+                "University: Arab American University <br>" +
+                "Major: MIS <br>" +
+                "Year: Third Year <br>" +
+                "ID: 202310739 <br>" +
+                "City: Jenin";
+            }
+
+            else if(num == 2){
+
+                text =
+                "<h2>Educational Certificates</h2>" +
+                "High School Certificate معدل 86.6 <br>" +
+                "Literary Branch <br>" +
+                "Bachelor Degree in Management Information Systems in 2027";
+            }
+
+            else if(num == 3){
+
+                text =
+                "<h2>Skills</h2>" +
+                "Reading <br>" +
+                "Swimming <br>" +
+                "Explanation Skill <br>" +
+                "Fast and Accurate Information Collection";
+            }
+
+            else if(num == 4){
+
+                text =
+                "<h2>Experiences</h2>" +
+                "Experience in Languages <br>" +
+                "Experience in Collecting Information";
+            }
+
+            else if(num == 5){
+
+                text =
+                "<h2>Training Courses</h2>" +
+                "First Aid Course <br>" +
+                "Java Course <br>" +
+                "Child Rescue Course <br>" +
+                "Women's Rights Support Course";
+            }
+
+            else if(num == 6){
+
+                text =
+                "<h2>Additional Qualifications</h2>" +
+                "Ability to communicate with others easily <br>" +
+                "Fast understanding ability <br>" +
+                "Ability to adapt quickly <br>" +
+                "Ability to learn quickly";
+            }
+
+            else{
+
+                text = "Please enter a number from 1 to 6";
+            }
+
+            document.getElementById("result").innerHTML = text;
+        }
+
+        function goHome(){
+
+            document.getElementById("result").innerHTML =
+            "Welcome to my CV Website";
+
+            document.getElementById("number").value = "";
+        }
+
+    </script>
+
+</body>
+</html>
